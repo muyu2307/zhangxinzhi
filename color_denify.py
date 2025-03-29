@@ -7,13 +7,13 @@ import numpy as np
 #image2 = cv2.imread("/home/zxz/work/opencv_test/normal_images/2_cropped.jpg") 
 #image3 = cv2.imread("/home/zxz/work/opencv_test/normal_images/3_cropped.jpg") 
 #image4 = cv2.imread("/home/zxz/work/opencv_test/normal_images/4_cropped.jpg") 
-image0 = cv2.imread("/home/zxz/work/opencv_test/stronglight_images/0_cropped.jpg") 
+image4 = cv2.imread("/home/zxz/work/opencv_test/weaklight_images/4.jpg") 
 # 将图像从BGR颜色空间转换到HSV颜色空间
-hsv_image = cv2.cvtColor(image0, cv2.COLOR_BGR2HSV)
+#hsv_image = cv2.cvtColor(image0, cv2.COLOR_BGR2HSV)
 #hsv_image = cv2.cvtColor(image1, cv2.COLOR_BGR2HSV)
 #hsv_image = cv2.cvtColor(image2, cv2.COLOR_BGR2HSV)
 #hsv_image = cv2.cvtColor(image3, cv2.COLOR_BGR2HSV)
-#hsv_image = cv2.cvtColor(image4, cv2.COLOR_BGR2HSV) 
+hsv_image = cv2.cvtColor(image4, cv2.COLOR_BGR2HSV) 
 
 
 
@@ -68,25 +68,25 @@ combined_mask = cv2.bitwise_or(red_mask, cv2.bitwise_or(green_mask, cv2.bitwise_
 
 
 
-combined_result0 = cv2.bitwise_and(image0, image0, mask=combined_mask)
+#combined_result0 = cv2.bitwise_and(image0, image0, mask=combined_mask)
 #combined_result1 = cv2.bitwise_and(image1, image1, mask=combined_mask)
 #combined_result2 = cv2.bitwise_and(image2, image2, mask=combined_mask)
 #combined_result3 = cv2.bitwise_and(image3, image3, mask=combined_mask)
-#combined_result4 = cv2.bitwise_and(image4, image4, mask=combined_mask)
+combined_result4 = cv2.bitwise_and(image4, image4, mask=combined_mask)
 
 # 显示结果
-cv2.imshow("Original Image0", image0)
+#cv2.imshow("Original Image0", image0)
 #cv2.imshow("Original Image1", image1)
 #cv2.imshow("Original Image2", image2)
 #cv2.imshow("Original Image3", image3)
-#cv2.imshow("Original Image4", image4)
+cv2.imshow("Original Image4", image4)
 
 cv2.imshow("Mask",combined_mask)
-cv2.imshow("Result0", combined_result0)
+#cv2.imshow("Result0", combined_result0)
 #cv2.imshow("Result1", combined_result1)
 #cv2.imshow("Result2", combined_result2)
 #cv2.imshow("Result3", combined_result3)
-#cv2.imshow("Result4", combined_result4)
+cv2.imshow("Result4", combined_result4)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
